@@ -1,18 +1,21 @@
 
 import streamlit as st
 import pandas as pd
-from io import BytesIO
 
-st.set_page_config(page_title="Flip Analyzer", layout="wide")
-st.title("Real Estate Flip Analyzer (No Login)")
+st.title("Flip Analysis App")
 
-# --- File Uploads ---
+# Upload Listings and Comps
 listings_file = st.file_uploader("Upload Listings CSV", type="csv", key="listings")
 comps_file = st.file_uploader("Upload Comps CSV", type="csv", key="comps")
 
-if listings_file and comps_file:
+if listings_file is not None and comps_file is not None:
     listings_df = pd.read_csv(listings_file)
     comps_df = pd.read_csv(comps_file)
+
+    zip_codes = sorted(listings_df["Zip"].dropna().unique())
+    # Continue with the rest of your UI/widgets...
+else:
+    st.warning("Please upload both listings and comps CSV files to continue.")
 
     # --- Sidebar Filters ---
     st.sidebar.header("Filters")
