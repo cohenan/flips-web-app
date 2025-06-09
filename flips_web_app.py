@@ -10,6 +10,7 @@ usernames = ["kc_user", "ny_user"]
 
 # Matching order: kc_pass for kc_user, ny_pass for ny_user
 hashed_passwords = stauth.Hasher(["kc_pass", "ny_pass"]).generate()
+print(hashed_passwords)
 authenticator = stauth.Authenticate(
     names, usernames, hashed_passwords,
     "flips_app", "abcdef", cookie_expiry_days=1
