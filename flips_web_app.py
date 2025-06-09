@@ -11,7 +11,10 @@ usernames = ["kc_user", "ny_user"]
 passwords = ["kc_pass", "ny_pass"]
 
 # Hash passwords
-hashed_passwords = stauth.Hasher(passwords).generate()
+hashed_passwords = [
+    'pbkdf2:sha256:260000$EKQgDL8MoJcoAW0n$e7aa9fbc9bb01957347c8e1bce3f87ff8e625993c06fc6c3901ee8a408ba8418',
+    'pbkdf2:sha256:260000$aCxdNvN62HiUu5x9$1b282c241c2c477aa6dd7e17e99dbb0f9a95f6ac6f8aa2f72dd3349a65a96001'
+]
 
 authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
                                     "flips_app", "abcdef", cookie_expiry_days=1)
