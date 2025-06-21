@@ -5,7 +5,7 @@ from io import BytesIO
 from datetime import datetime
 
 st.set_page_config(page_title="Flip Analyzer", layout="wide")
-st.markdown("<h1 style='text-align: center; color: teal;'>🏠 Real Estate Flip Analyzer</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: teal;'>🏠 NewRoof Real Estate Analyzer </h1>", unsafe_allow_html=True)
 
 sort_options = ["ALL", "Area", "County", "City", "Sub"]
 
